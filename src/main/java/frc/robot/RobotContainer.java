@@ -43,7 +43,7 @@ public class RobotContainer {
     Robot.m_driveTrain.setDefaultCommand(new MecanumDriver());
     Robot.m_intakeShooter.setDefaultCommand(new Intake());
     Robot.m_climber.setDefaultCommand(new LeftRaisingMechanism());
-    Robot.m_arm.setDefaultCommand(new ArmLoweringMechanism());
+    Robot.m_arm.setDefaultCommand(new ArmRaisingMechanism());
 
 
 

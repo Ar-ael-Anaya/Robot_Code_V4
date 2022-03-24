@@ -23,7 +23,11 @@ public class ArmRaisingMechanism extends CommandBase {
 
   @Override
   public void execute() {
+    if (! Robot.m_arm.checkArmLimitSwitch() /*&& ! Robot.m_robotContainer.xButton.()*/){
     Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armRaisingMotorSpeed);
+    }else{
+      Robot.m_arm.setArmMotorSpeed(0);
+    }
 
    
   }

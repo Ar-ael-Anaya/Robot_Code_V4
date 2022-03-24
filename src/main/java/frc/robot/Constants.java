@@ -51,14 +51,13 @@ public final class Constants {
         public static double m_armLoweringMotorSpeed = -.5;
     }
     public final class AutonomousValues{
-        public static final double m_autonomousXSpeed = .25;
+        public static final double m_autonomousXSpeed = -.35;
         public static final double m_autonomousYSpeed = 0;
         public static final double m_autonomousZSpeed = 0;
  }
 }
-   public  static class ArmValues{
-        public static  boolean m_armUp = true;        
-}  
+  
+ 
       
    public final class Controller{
 
@@ -92,9 +91,9 @@ public final class Constants {
     public final class Timings{
         public final class AutonomousTimings{
             //Adjust depending on competition rules
-            public static final double m_autonomousTime = 40;
+            public static final double m_autonomousTime = 5;
         }
-
+/*
         public final class ClimberTimings{
             //Adjust based on testing and Speed choosen 
             public static final double m_ClimberRaisingMechanismTime = 5;
@@ -107,6 +106,7 @@ public final class Constants {
             public static final double m_ArmRaisingMechanismTime = 5;
         }
     }  
-
+*/
     public static final double m_limiter = .35;
+}
 }

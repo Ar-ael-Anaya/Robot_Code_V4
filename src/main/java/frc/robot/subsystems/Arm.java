@@ -5,13 +5,15 @@
 package frc.robot.subsystems;
 
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Arm extends SubsystemBase {
+  DigitalInput armlimitSwitch = new DigitalInput(0);
   PWMSparkMax armMotor = new PWMSparkMax(Constants.Motors.ArmMotors.m_armMotor);
-
+ 
 
   public Arm() {}
 
@@ -21,6 +23,11 @@ public class Arm extends SubsystemBase {
   }
 public void setArmMotorSpeed(double axis){
   armMotor.set(axis);
+ 
+}
+
+public boolean checkArmLimitSwitch(){
+  return  armlimitSwitch.get();
 }
 
 }

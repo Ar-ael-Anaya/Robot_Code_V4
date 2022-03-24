@@ -14,9 +14,8 @@ import frc.robot.Sequences.AutonomousSequence;
 import frc.robot.commands.MecanumDriver;
 import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.ArmMechanism.ArmRaisingMechanism;
-import frc.robot.commands.ClimbingSystem.LoweringMechanism.LeftLoweringMechanism;
-import frc.robot.commands.ClimbingSystem.LoweringMechanism.RightLoweringMechanism;
-import frc.robot.commands.ClimbingSystem.RaisingMechanism.RightRaisingMechanism;
+import frc.robot.commands.ClimbingSystem.LeftLoweringMechanism;
+import frc.robot.commands.ClimbingSystem.LeftRaisingMechanism;
 import frc.robot.commands.IntakeShooterSystem.Intake;
 import frc.robot.commands.IntakeShooterSystem.Shooter;
 
@@ -43,7 +42,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     Robot.m_driveTrain.setDefaultCommand(new MecanumDriver());
     Robot.m_intakeShooter.setDefaultCommand(new Intake());
-    Robot.m_climber.setDefaultCommand(new LeftLoweringMechanism(Constants.Timings.ClimberTimings.m_ClimberRaisingMechanismTime));
+    Robot.m_climber.setDefaultCommand(new LeftRaisingMechanism());
     Robot.m_arm.setDefaultCommand(new ArmLoweringMechanism());
 
 
@@ -54,20 +53,14 @@ public class RobotContainer {
   }
 
   public RobotContainer() {
-    rBumper.whileHeld(new Shooter());
-    lBumper.whileHeld(new LeftLoweringMechanism(Constants.Timings.ClimberTimings.m_ClimberRaisingMechanismTime));
-    aButton.and(lBumper).whenActive(new RightLoweringMechanism(Constants.Timings.ClimberTimings.m_ClimberloweringMechanismTime));
-  
-  
-    if (aButton.get()){
-     Robot.m_climber.setDefaultCommand(new RightRaisingMechanism(Constants.Timings.ClimberTimings.m_ClimberRaisingMechanismTime));
-   }else{
-    Robot.m_climber.setDefaultCommand(new LeftLoweringMechanism(Constants.Timings.ClimberTimings.m_ClimberRaisingMechanismTime));     
-   }
-  
-  
     xButton.whileHeld(new ArmLoweringMechanism());
     bButton.whileHeld(new ArmRaisingMechanism());
+    rBumper.whileHeld(new Shooter());
+    lBumper.whileHeld(new LeftLoweringMechanism());
+   
+  
+   
+ 
     // Configure the button bindings
     configureButtonBindings();
   }

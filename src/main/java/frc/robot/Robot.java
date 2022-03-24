@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.MecanumDriver;
+import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.IntakeShooterSystem.Intake;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Climber;
@@ -31,6 +32,7 @@ public class Robot extends TimedRobot {
 
  public static MecanumDriver m_mecanumDriver = new MecanumDriver();
  public static Intake  m_intake = new Intake();
+ public static ArmLoweringMechanism m_armLoweringMechanism = new ArmLoweringMechanism();
 
  private Command m_autonomousCommand;
   

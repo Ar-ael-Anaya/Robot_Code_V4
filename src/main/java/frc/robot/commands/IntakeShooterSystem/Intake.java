@@ -10,11 +10,7 @@ import frc.robot.Constants;
 import frc.robot.Robot;
 
 public class Intake extends CommandBase {
- 
-
   
- 
- 
   public Intake() {
     
     addRequirements(Robot.m_intakeShooter);

@@ -35,7 +35,7 @@ public class ArmRaisingMechanism extends CommandBase {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    Robot.m_arm.setArmMotorSpeed(0);
+
     return false;
  }
 }

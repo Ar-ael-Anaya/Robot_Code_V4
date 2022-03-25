@@ -7,13 +7,14 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Arm extends SubsystemBase {
   DigitalInput topArmlimitSwitch = new DigitalInput(0);
   DigitalInput bottomArmlimitSwitch = new DigitalInput(1);
-  PWMSparkMax armMotor = new PWMSparkMax(Constants.Motors.ArmMotors.m_armMotor);
+  PWMVictorSPX armMotor = new PWMVictorSPX(Constants.Motors.ArmMotors.m_armMotor);
  
 
   public Arm() {}

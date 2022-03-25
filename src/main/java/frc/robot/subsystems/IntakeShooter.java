@@ -5,10 +5,11 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 public class IntakeShooter extends SubsystemBase {
- PWMSparkMax intakeShooterMotor = new PWMSparkMax(Constants.Motors.IntakeShooterMotors.m_intakeShooterMotor);
+ PWMVictorSPX intakeShooterMotor = new PWMVictorSPX(Constants.Motors.IntakeShooterMotors.m_intakeShooterMotor);
  
   public IntakeShooter() {}
 

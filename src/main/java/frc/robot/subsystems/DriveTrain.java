@@ -17,8 +17,14 @@ public class DriveTrain extends SubsystemBase {
   private PWMSparkMax frontRight = new PWMSparkMax(Constants.Motors.DriveMotors.m_frontRight);
   private PWMSparkMax rearRight = new PWMSparkMax(Constants.Motors.DriveMotors.m_rearRight);
   
+
+
   /** Creates a new DriveTrain. */
   public DriveTrain() {
+    rearRight.setInverted(true);
+    frontRight.setInverted(true);
+    //frontRight.setInverted(true);
+
     Robot.m_robotDrive = new MecanumDrive(frontLeft, reafLeft, frontRight, rearRight);
 
   }

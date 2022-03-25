@@ -37,8 +37,8 @@ public final class Constants {
 
     public static class IntakeShooterValues {
         //invert negative depending on motor orientation
-        public static double m_intakeMotorSpeed = .5;
-        public static double m_shooterMotorSpeed = -.5;
+        public static double m_intakeMotorSpeed = 1;
+        public static double m_shooterMotorSpeed = -1;
    }
     public static class Climbervalues {
         //invert negative depending on motor orientation
@@ -47,12 +47,12 @@ public final class Constants {
   }
     public static class ArmValues{
         //invert negative depending on motor orientation
-        public static double m_armRaisingMotorSpeed = .5;
-        public static double m_armLoweringMotorSpeed = -.5;
+        public static double m_armRaisingMotorSpeed = -1;
+        public static double m_armLoweringMotorSpeed = 1;
     }
     public final class AutonomousValues{
-        public static final double m_autonomousXSpeed = -.35;
-        public static final double m_autonomousYSpeed = 0;
+        public static final double m_autonomousXSpeed = -.75;
+        public static final double m_autonomousYSpeed = -.75;
         public static final double m_autonomousZSpeed = 0;
  }
 }
@@ -91,7 +91,8 @@ public final class Constants {
     public final class Timings{
         public final class AutonomousTimings{
             //Adjust depending on competition rules
-            public static final double m_autonomousTime = 5;
+            public static final double m_autonomousTime = 
+            1.5;
         }
 
         public final class ClimberTimings{
@@ -102,13 +103,13 @@ public final class Constants {
 
         public final class ArmTimings{
             //Adjust based on testing and Speed choosen
-            public static final double m_ArmLoweringTime = 1;
-            public static final double m_ArmRaisingTime = 1;
+            public static final double m_ArmLoweringTime = 5;
+            public static final double m_ArmRaisingTime = 5;
         }
 
        
     }  
 
-    public static final double m_limiter = .35;
+    public static final double m_limiter = 1;
 }
 

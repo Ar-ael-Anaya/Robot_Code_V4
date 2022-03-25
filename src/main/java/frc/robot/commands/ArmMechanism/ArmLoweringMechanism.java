@@ -27,7 +27,7 @@ public class ArmLoweringMechanism extends CommandBase {
 
   @Override
   public void execute() {
-      Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armLoweringMotorSpeed);
+      Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armLoweringMotorSpeed *.15);
   }
 
   // Called once the command ends or is interrupted.

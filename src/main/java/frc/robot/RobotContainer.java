@@ -14,7 +14,7 @@ import frc.robot.Sequences.AutonomousSequence;
 import frc.robot.commands.MecanumDriver;
 import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.ArmMechanism.ArmRaisingMechanism;
-import frc.robot.commands.ArmMechanism.Stop;
+
 import frc.robot.commands.ClimbingSystem.LeftLoweringMechanism;
 import frc.robot.commands.ClimbingSystem.LeftRaisingMechanism;
 import frc.robot.commands.IntakeShooterSystem.Intake;

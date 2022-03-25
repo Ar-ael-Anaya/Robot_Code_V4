@@ -93,20 +93,22 @@ public final class Constants {
             //Adjust depending on competition rules
             public static final double m_autonomousTime = 5;
         }
-/*
+
         public final class ClimberTimings{
             //Adjust based on testing and Speed choosen 
-            public static final double m_ClimberRaisingMechanismTime = 5;
-            public static final double m_ClimberloweringMechanismTime = 5;
+            public static final double m_ClimberRaisingTime = 5;
+            public static final double m_ClimberloweringTime = 5;
         }
 
         public final class ArmTimings{
             //Adjust based on testing and Speed choosen
-            public static final double m_ArmLoweringMechanismTime = 5;
-            public static final double m_ArmRaisingMechanismTime = 5;
+            public static final double m_ArmLoweringTime = 1;
+            public static final double m_ArmRaisingTime = 1;
         }
+
+       
     }  
-*/
+
     public static final double m_limiter = .35;
 }
-}
+

@@ -4,42 +4,37 @@
 
 package frc.robot.commands.ArmMechanism;
 
-
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants;
 import frc.robot.Robot;
 
-public class ArmLoweringMechanism extends CommandBase {
-  Timer m_timer = new Timer();
-  double m_time; 
-
-
-  public ArmLoweringMechanism(double time) {
-    m_time = time;
+public class Stop extends CommandBase {
+  /** Creates a new Stop. */
+  public Stop() {
+    // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(Robot.m_arm);
   }
 
+  // Called when the command is initially scheduled.
   @Override
+  
   public void initialize() {
-      m_timer.start();
+    Robot.m_arm.setArmMotorSpeed(0);
   }
 
+  // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armLoweringMotorSpeed);
+
+    Robot.m_arm.setArmMotorSpeed(0);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
-    Robot.m_arm.setArmMotorSpeed(0);
-    m_timer.reset();
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override
-  public boolean isFinished() {   
-    return m_timer.get() > m_time;
- }
+  public boolean isFinished() {
+    return false;
+  }
 }

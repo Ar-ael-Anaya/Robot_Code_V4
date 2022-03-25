@@ -14,11 +14,6 @@
       "window": {
         "visible": true
       }
-    },
-    "RoboRIO": {
-      "window": {
-        "visible": true
-      }
     }
   },
   "NTProvider": {
@@ -30,6 +25,7 @@
       "/LiveWindow/IntakeShooter": "Subsystem",
       "/LiveWindow/Shooter": "Subsystem",
       "/LiveWindow/Ungrouped/DigitalInput[0]": "Digital Input",
+      "/LiveWindow/Ungrouped/DigitalInput[1]": "Digital Input",
       "/LiveWindow/Ungrouped/MecanumDrive[1]": "MecanumDrive",
       "/LiveWindow/Ungrouped/PWMSparkMax[4]": "Motor Controller",
       "/LiveWindow/Ungrouped/PWMSparkMax[5]": "Motor Controller",

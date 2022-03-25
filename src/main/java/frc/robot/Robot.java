@@ -32,7 +32,7 @@ public class Robot extends TimedRobot {
 
  public static MecanumDriver m_mecanumDriver = new MecanumDriver();
  public static Intake  m_intake = new Intake();
- public static ArmLoweringMechanism m_armLoweringMechanism = new ArmLoweringMechanism();
+ //public static ArmLoweringMechanism m_armLoweringMechanism = new ArmLoweringMechanism();
 
  private Command m_autonomousCommand;
   

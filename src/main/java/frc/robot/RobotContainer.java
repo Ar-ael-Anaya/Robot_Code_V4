@@ -14,6 +14,7 @@ import frc.robot.Sequences.AutonomousSequence;
 import frc.robot.commands.MecanumDriver;
 import frc.robot.commands.ArmMechanism.ArmLoweringMechanism;
 import frc.robot.commands.ArmMechanism.ArmRaisingMechanism;
+import frc.robot.commands.ArmMechanism.Stop;
 import frc.robot.commands.ClimbingSystem.LeftLoweringMechanism;
 import frc.robot.commands.ClimbingSystem.LeftRaisingMechanism;
 import frc.robot.commands.IntakeShooterSystem.Intake;
@@ -43,7 +44,7 @@ public class RobotContainer {
     Robot.m_driveTrain.setDefaultCommand(new MecanumDriver());
     Robot.m_intakeShooter.setDefaultCommand(new Intake());
     Robot.m_climber.setDefaultCommand(new LeftRaisingMechanism());
-    Robot.m_arm.setDefaultCommand(new ArmRaisingMechanism());
+   //Robot.m_arm.setDefaultCommand(new ArmLoweringMechanism(Constants.Timings.ArmTimings.m_ArmRaisingTime));
 
 
 
@@ -53,8 +54,10 @@ public class RobotContainer {
   }
 
   public RobotContainer() {
-    xButton.whileHeld(new ArmLoweringMechanism());
-    bButton.whileHeld(new ArmRaisingMechanism());
+    xButton.whenPressed(new ArmLoweringMechanism(Constants.Timings.ArmTimings.m_ArmLoweringTime));
+    bButton.whenPressed(new ArmRaisingMechanism(Constants.Timings.ArmTimings.m_ArmRaisingTime));
+
+    
     rBumper.whileHeld(new Shooter());
     lBumper.whileHeld(new LeftLoweringMechanism());
    

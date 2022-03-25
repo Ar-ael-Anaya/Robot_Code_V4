@@ -11,35 +11,48 @@ import frc.robot.Constants;
 import frc.robot.Robot;
 
 public class ArmRaisingMechanism extends CommandBase {
-
-  public ArmRaisingMechanism() {
-    
+  Timer m_timer = new Timer();
+  double m_time; 
+  public ArmRaisingMechanism(double time) {
+    m_time = time;
     addRequirements(Robot.m_arm);
   }
 
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+
+      m_timer.start();
+   
+  }
 
   @Override
   public void execute() {
-    if (! Robot.m_arm.checkArmLimitSwitch() /*&& ! Robot.m_robotContainer.xButton.()*/){
+ 
+    Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armRaisingMotorSpeed);
+    
+    /*
+    if (! Robot.m_arm.checkTopArmLimitSwitch() && Robot.m_robotContainer.bButton.get()){
     Robot.m_arm.setArmMotorSpeed(Constants.MotorSpeeds.ArmValues.m_armRaisingMotorSpeed);
     }else{
       Robot.m_arm.setArmMotorSpeed(0);
     }
-
+*/
    
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    Robot.m_arm.setArmMotorSpeed(0);
+    m_timer.reset();
+ 
+  }
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-
-    return false;
+ 
+    return m_timer.get() > m_time;
  }
 }
